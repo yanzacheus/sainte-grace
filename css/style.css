@@ -422,10 +422,11 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   :root {
-    --scroll-offset: clamp(120px, 18vh, 200px);
+    --scroll-offset: 16px;
   }
 
   header {
+    position: static;
     padding: 10px 0;
   }
 
