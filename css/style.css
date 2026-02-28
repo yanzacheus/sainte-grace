@@ -368,7 +368,9 @@ h2::after {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
-  margin-top: 30px;
+  justify-content: center;
+  margin: 30px auto 0;
+  width: 100%;
 }
 
 .gallery-item {
