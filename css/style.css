@@ -416,7 +416,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 350px; /* Augmenté pour éviter que le header mobile ne masque les titres */
+    scroll-padding-top: 180px; /* Ajusté pour limiter l'espace au-dessus des sections */
   }
 
   header {
