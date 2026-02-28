@@ -464,6 +464,11 @@ footer {
   .steps {
     flex-direction: column;
   }
+
+  #nos-actions,
+  #galerie {
+    scroll-margin-top: 110px;
+  }
 }
 
 .helloasso-widget-container {
