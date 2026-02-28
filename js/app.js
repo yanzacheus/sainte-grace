@@ -27,9 +27,22 @@
     });
 
     menu.addEventListener('click', (event) => {
-      const target = event.target;
-      if (target && target.closest('a')) {
-        closeMenu();
+      const link = event.target && event.target.closest('a');
+      if (!link) return;
+
+      const hash = link.getAttribute('href');
+      if (!hash || !hash.startsWith('#')) return;
+
+      event.preventDefault();
+      closeMenu();
+      scheduleUpdate();
+
+      const target = hash === '#' ? document.body : document.querySelector(hash);
+      if (target) {
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        history.pushState(null, '', hash);
       }
     });
 
