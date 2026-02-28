@@ -6,3 +6,4 @@ dist
 .cache
 # Local Netlify folder
 .netlify
+.DS_Store
