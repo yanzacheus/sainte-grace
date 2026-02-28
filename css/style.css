@@ -246,7 +246,6 @@ nav a:hover {
 /* Sections */
 section {
   padding: 80px 0;
-  scroll-margin-top: calc(var(--scroll-offset) + env(safe-area-inset-top, 0px));
 }
 
 h2 {
@@ -254,6 +253,7 @@ h2 {
   text-align: center;
   margin: 0 0 40px;
   position: relative;
+  scroll-margin-top: calc(var(--scroll-offset) + env(safe-area-inset-top, 0px));
 }
 
 section > h2:first-child {
