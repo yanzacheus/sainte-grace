@@ -256,6 +256,10 @@ h2 {
   position: relative;
 }
 
+section > h2:first-child {
+  margin-top: 12px;
+}
+
 h2::after {
   content: '';
   display: block;
