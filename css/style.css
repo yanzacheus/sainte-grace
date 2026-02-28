@@ -145,6 +145,24 @@ nav {
   text-decoration: none;
 }
 
+.nav-menu {
+  display: contents;
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.nav-toggle::-webkit-details-marker {
+  display: none;
+}
+
 .logo-img {
   height: 50px;
   width: auto;
@@ -422,30 +440,51 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   :root {
-    --scroll-offset: 16px;
+    --scroll-offset: 88px;
   }
 
   header {
-    position: static;
     padding: 10px 0;
   }
 
   nav {
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 8px; /* Encore un peu plus serré pour gagner de la place */
-    padding: 0;
-    margin-bottom: 15px;
   }
 
   .logo {
+    flex: 1 1 auto;
     margin: 6px 0 5px;
     gap: 10px;
+  }
+
+  nav ul {
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    flex-basis: 100%;
+  }
+
+  .nav-menu[open] > ul {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .logo span {
