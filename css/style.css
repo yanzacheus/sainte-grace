@@ -416,7 +416,7 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 180px; /* Ajusté pour limiter l'espace au-dessus des sections */
+    scroll-padding-top: 0; /* Géré via scroll-margin sur les sections */
   }
 
   header {
@@ -465,9 +465,13 @@ footer {
     flex-direction: column;
   }
 
+  section {
+    scroll-margin-top: 150px;
+  }
+
   #nos-actions,
   #galerie {
-    scroll-margin-top: 110px;
+    scroll-margin-top: 120px;
   }
 }
 
