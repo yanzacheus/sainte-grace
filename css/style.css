@@ -438,7 +438,7 @@ h2::after {
   color: var(--text-muted);
   margin: -18px 0 12px;
   font-size: 0.85rem;
-  opacity: 0.75;
+  opacity: 0.9;
 }
 
 .press-grid {

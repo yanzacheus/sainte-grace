@@ -66,24 +66,34 @@
   const lightboxCaption = document.querySelector('.lightbox-caption');
   const lightboxClose = document.querySelector('.lightbox-close');
   const pressButtons = document.querySelectorAll('.press-open');
+  let lastFocusedElement = null;
 
   const closeLightbox = () => {
     if (!lightbox) return;
     lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('lightbox-open');
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
   };
 
   const openLightbox = (button) => {
     if (!lightbox || !lightboxImage) return;
     const full = button.getAttribute('data-full');
     const caption = button.getAttribute('data-caption') || '';
+    lastFocusedElement = document.activeElement;
     lightboxImage.src = full || '';
     lightboxImage.alt = caption;
     if (lightboxCaption) {
       lightboxCaption.textContent = caption;
     }
     lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden', 'false');
     document.body.classList.add('lightbox-open');
+    if (lightboxClose) {
+      lightboxClose.focus();
+    }
   };
 
   if (lightbox && pressButtons.length > 0) {
@@ -104,6 +114,21 @@
     window.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !lightbox.hidden) {
         closeLightbox();
+        return;
+      }
+
+      if (event.key === 'Tab' && !lightbox.hidden) {
+        const focusable = lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     });
   }
