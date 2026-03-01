@@ -143,6 +143,22 @@
             <img src="img/share/IMG_4766.jpeg" alt="Action Sainte Grâce 4">
           </div>
         </div>
+        <h3 class="press-title">On parle de nous dans les journaux</h3>
+        <p class="press-hint">(Cliquez sur un article pour l'afficher en entier)</p>
+        <div class="press-grid">
+          <figure class="press-item">
+            <button class="press-open" type="button" data-full="img/newspapers/aidez-brigitte.jpeg" data-caption="Article de presse – Aidez Brigitte" aria-label="Voir l'article en entier : Aidez Brigitte">
+              <img src="img/newspapers/aidez-brigitte.jpeg" alt="Article de presse sur l'association Sainte Grâce">
+            </button>
+            <figcaption class="press-caption">Article de presse – Aidez Brigitte</figcaption>
+          </figure>
+          <figure class="press-item">
+            <button class="press-open" type="button" data-full="img/newspapers/repas-de-noel.jpeg" data-caption="Article de presse – Repas de Noël" aria-label="Voir l'article en entier : Repas de Noël">
+              <img src="img/newspapers/repas-de-noel.jpeg" alt="Article de presse sur le repas de Noël de l'association Sainte Grâce">
+            </button>
+            <figcaption class="press-caption">Article de presse – Repas de Noël</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -177,6 +193,14 @@
       <p>&copy; 2025 Association Sainte Grâce. Site créé avec cœur.</p>
     </div>
   </footer>
+
+  <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Aperçu de l'article">
+    <button class="lightbox-close" type="button" aria-label="Fermer l'aperçu">&times;</button>
+    <figure class="lightbox-content">
+      <img class="lightbox-image" alt="">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+  </div>
 
   <script src="js/app.js"></script>
 </body>

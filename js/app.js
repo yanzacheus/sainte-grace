@@ -60,4 +60,51 @@
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(scheduleUpdate).catch(() => {});
   }
+
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImage = document.querySelector('.lightbox-image');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const pressButtons = document.querySelectorAll('.press-open');
+
+  const closeLightbox = () => {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    document.body.classList.remove('lightbox-open');
+  };
+
+  const openLightbox = (button) => {
+    if (!lightbox || !lightboxImage) return;
+    const full = button.getAttribute('data-full');
+    const caption = button.getAttribute('data-caption') || '';
+    lightboxImage.src = full || '';
+    lightboxImage.alt = caption;
+    if (lightboxCaption) {
+      lightboxCaption.textContent = caption;
+    }
+    lightbox.hidden = false;
+    document.body.classList.add('lightbox-open');
+  };
+
+  if (lightbox && pressButtons.length > 0) {
+    pressButtons.forEach((button) => {
+      button.addEventListener('click', () => openLightbox(button));
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) {
+        closeLightbox();
+      }
+    });
+  }
 })();
