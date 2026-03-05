@@ -1,6 +1,7 @@
 # Allow indexing by search engines
 User-agent: *
 Allow: /
+Sitemap: https://www.association-sainte-grace.org/sitemap.xml
 
 # Block common AI crawlers
 User-agent: GPTBot
