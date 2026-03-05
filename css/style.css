@@ -134,6 +134,54 @@ h1, h2, h3 {
   left: 10px;
 }
 
+.footer-legal-link {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-legal-link:visited {
+  color: var(--white);
+}
+
+.footer-legal-link:hover,
+.footer-legal-link:focus-visible {
+  color: var(--accent);
+}
+
+.legal-page h1 {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.legal-page section {
+  padding: 2rem 0;
+}
+
+.legal-page h2 {
+  font-size: 1.6rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.legal-page {
+  padding: 3rem 1.25rem;
+}
+
+.legal-page h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--accent);
+  margin: 10px 0 0;
+  border-radius: 2px;
+}
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
