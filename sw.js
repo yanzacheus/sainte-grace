@@ -1,9 +1,9 @@
-const CACHE_VERSION = "sainte-grace-v2";
+const CACHE_VERSION = "sainte-grace-v1";
 const STATIC_ASSETS = [
   "/",
   "/index.html",
   "/mentions-legales.html",
-  "/css/style.min.css",
+  "/css/style.css",
   "/js/app.js",
   "/img/logo-80.jpeg",
   "/img/logo-160.jpeg",
