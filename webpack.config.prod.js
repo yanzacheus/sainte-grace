@@ -27,6 +27,7 @@ module.exports = merge(common, {
         { from: '404.html', to: '404.html' },
         { from: 'mentions-legales.html', to: 'mentions-legales.html' },
         { from: 'site.webmanifest', to: 'site.webmanifest' },
+        { from: 'sw.js', to: 'sw.js' },
       ],
     }),
   ],

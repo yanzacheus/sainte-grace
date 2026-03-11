@@ -7,16 +7,13 @@
   <meta name="robots" content="index, follow">
   <title>Mentions légales - Association Sainte Grâce</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <meta name="description" content="Mentions légales de l'Association Sainte Grâce.">
   <link rel="canonical" href="https://www.association-sainte-grace.org/mentions-legales.html">
 
   <meta property="og:title" content="Mentions légales - Association Sainte Grâce">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.association-sainte-grace.org/mentions-legales.html">
-  <meta property="og:image" content="https://www.association-sainte-grace.org/img/logo.jpeg">
+  <meta property="og:image" content="https://www.association-sainte-grace.org/img/logo-160.jpeg">
   <meta property="og:image:alt" content="Logo de l'association Sainte Grâce">
 
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -36,7 +33,11 @@
   <header>
     <nav class="container site-nav">
       <a href="index.html" class="logo">
-        <img src="img/logo.jpeg" alt="Logo Association Sainte Grâce" class="logo-img">
+        <picture>
+          <source type="image/avif" srcset="img/logo-80.avif 80w, img/logo-160.avif 160w" sizes="(max-width: 768px) 40px, 50px">
+          <source type="image/webp" srcset="img/logo-80.webp 80w, img/logo-160.webp 160w" sizes="(max-width: 768px) 40px, 50px">
+          <img src="img/logo-80.jpeg" srcset="img/logo-80.jpeg 80w, img/logo-160.jpeg 160w" sizes="(max-width: 768px) 40px, 50px" width="80" height="69" fetchpriority="high" decoding="async" alt="Logo Association Sainte Grâce" class="logo-img">
+        </picture>
         <span>Sainte Grâce</span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
@@ -102,7 +103,7 @@
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 
 </html>
